@@ -1,0 +1,24 @@
+[package]
+name = "bincode-example"
+version = "0.1.0"
+edition = "2018"
+autoexamples = false
+publish = false
+
+[dependencies]
+grpcio-sys = { path = "../grpc-sys", version = "0.6.0" }
+libc = "0.2"
+futures = "0.3"
+futures-timer = "3.0"
+bytes = "0.5"
+log = "0.4"
+grpcio = { path = "..", version = "0.6.0", default-features = false, features = ["bincode-codec"] }
+serde = { version = "1.0", features = ["derive"] }
+
+[[example]]
+name = "greeter_client_bincode"
+path = "examples/hello_world/client.rs"
+
+[[example]]
+name = "greeter_server_bincode"
+path = "examples/hello_world/server.rs"

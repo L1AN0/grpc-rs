@@ -59,6 +59,8 @@ pub use crate::channel::{
 };
 pub use crate::client::Client;
 
+#[cfg(feature = "bincode-codec")]
+pub use crate::codec::bi_codec::{de as bi_de, ser as bi_ser};
 #[cfg(feature = "protobuf-codec")]
 pub use crate::codec::pb_codec::{de as pb_de, ser as pb_ser};
 #[cfg(feature = "prost-codec")]
